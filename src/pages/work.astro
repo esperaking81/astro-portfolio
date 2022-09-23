@@ -1,0 +1,75 @@
+---
+import '../styles/global.css'
+import Nav from '../components/Nav.astro'
+import WorkList from '../components/WorkList.astro'
+import MainHead from '../components/MainHead.astro'
+import Footer from '../components/Footer.astro'
+
+const works = [
+  {
+    tag: 'latest',
+    title: 'Vivotin',
+    icon: './public/assets/vivotin.png',
+    description: 'A professional social media app'
+  },
+  {
+    tag: 'latest',
+    title: 'CNSS MI TON',
+    icon: './public/assets/cnss.png',
+    description: 'Information source for CNSS Benin clients'
+  },
+  {
+    tag: 'old',
+    title: 'Pixelix',
+    icon: './public/assets/pixelix.png',
+    description: 'Social media app for design content creators'
+  },
+  {
+    tag: 'old',
+    icon: './public/assets/pixelix.png',
+    title: 'Pixelix Dashboard',
+    description: 'Web app for pixelix mobile app administration'
+  }
+]
+
+const filterWorks = (tag: String) => {
+  return works.filter(el => el.tag == tag)
+}
+---
+
+<html lang="en">
+  <head>
+    <MainHead
+      title="Work | Espera Awo"
+      description="Learn about Espera Awo's most recent projects"
+    />
+    <style>
+      .title {
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <Nav />
+      <main>
+        <div class="flex flex-col mt-4">
+          <span class="text-3xl font-semibold font-quicksand">Work</span>
+          <p class="font-extralight">
+            List of projects I&apos;ve worked on so far.
+          </p>
+        </div>
+        <section class="mt-8">
+          <h1 class="text-xl font-light">Latest</h1>
+          <WorkList works={filterWorks('latest')} />
+        </section>
+        <section class="mt-4">
+          <h1 class="text-xl font-light">Old Projects</h1>
+          <WorkList works={filterWorks('old')} />
+        </section>
+      </main>
+      <Footer />
+    </header>
+  </body>
+</html>

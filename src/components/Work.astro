@@ -1,0 +1,12 @@
+---
+const { title, description } = Astro.props
+---
+
+<div class="p-4 flex group transition ease-in-out delay-150 duration-300">
+  <div class="ml-2">
+    <div class="text-white/50 group-hover:text-white">{title}</div>
+    <p class="mt-2 text-white/25 font-light group-hover:text-white/50">
+      {description}
+    </p>
+  </div>
+</div>

@@ -2,12 +2,10 @@
 // Component Imports
 import MainHead from '../components/MainHead.astro'
 import Nav from '../components/Nav.astro'
-import Footer from '../components/Footer.astro'
-import PortfolioPreview from '../components/PortfolioPreview.astro'
 
 // Data Fetching: List all Markdown posts in the repo.
-const projects = await Astro.glob('./project/**/*.md')
-const featuredProject = projects[0]
+//const projects = await Astro.glob('./project/**/*.md')
+//const featuredProject = projects[0]
 
 // Full Astro Component Syntax:
 // https://docs.astro.build/core-concepts/astro-components/
@@ -20,11 +18,16 @@ const featuredProject = projects[0]
       description="Espera Awo: Developer, Speaker, and Writer..."
     />
     <style>
+
     </style>
   </head>
-  <body>
-    <Nav />
-    <main></main>
-    <Footer />
+  <body class="flex flex-col min-h-screen">
+    <header><Nav /></header>
+    <main
+      class="flex-1 font-quicksand flex flex-col justify-center items-center px-8"
+    >
+      <div class="text-6xl text-center">Hi, I'm Espera Awo</div>
+      <div class="mt-8 text-xl font-bold">A Software Developer from Benin</div>
+    </main>
   </body>
 </html>
