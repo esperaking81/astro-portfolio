@@ -1,0 +1,17 @@
+---
+// Components Imports
+import Nav from './Nav.astro'
+import ThemeToggle from './ThemeToggleButton'
+import { IoLogoGithub } from 'react-icons/io5'
+---
+
+<header class="fixed w-full p-2 items-center z-20 backdrop-blur-md flex">
+  <Nav />
+  <div class="flex items-center">
+    <a class="link mx-4" href="https://github.com/esperaking81" target="_blank">
+      <IoLogoGithub />
+    </a>
+
+    <ThemeToggle client:load />
+  </div>
+</header>

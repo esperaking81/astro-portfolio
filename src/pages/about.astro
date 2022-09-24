@@ -1,58 +1,30 @@
 ---
+import '../styles/global.css'
+
+// Components Imports
 import MainHead from '../components/MainHead.astro'
 import Footer from '../components/Footer.astro'
-import Nav from '../components/Nav.astro'
+import Body from '../layouts/Body.astro'
+import Header from '../components/Header.astro';
 ---
 
 <html lang="en">
   <head>
     <MainHead
-      title="About | Jeanine White"
-      description="About Jeanine White Lorem Ipsum"
+      title="About | Espera Awo"
+      description="About Espera Awo"
     />
   </head>
-  <body>
-    <Nav />
+  <Body>
+    <Header />
     <main>
       <div class="text-3xl font-semibold">About me</div>
       <div class="mt-8">
         <p>
-          Cream cheese say cheese stinking bishop. Brie fondue hard cheese
-          bocconcini feta camembert de normandie babybel airedale. Red leicester
-          swiss manchego mascarpone pepper jack airedale fromage frais ricotta.
-          Cheese and biscuits cauliflower cheese boursin.
-        </p>
-        <p>
-          Pepper jack cheesy feet cheese slices. Halloumi port-salut queso
-          caerphilly roquefort cheese slices cheesy feet rubber cheese. Cheese
-          slices smelly cheese pecorino macaroni cheese feta blue castello
-          roquefort edam. Babybel pepper jack airedale cheddar fromage frais
-          manchego.
-        </p>
-        <p>
-          Cauliflower cheese lancashire macaroni cheese. Cheeseburger babybel
-          cheese on toast airedale cauliflower cheese who moved my cheese
-          roquefort paneer. Stinking bishop cheddar taleggio port-salut
-          port-salut stinking bishop cheesy grin babybel. Blue castello feta
-          everyone loves brie.
-        </p>
-        <p>
-          Goat squirty cheese cut the cheese. Cheese and wine cheddar fondue
-          airedale cottage cheese camembert de normandie feta babybel. Rubber
-          cheese melted cheese pecorino port-salut fondue gouda cheese on toast
-          cheesy feet. Feta edam everyone loves cheese strings camembert de
-          normandie.
-        </p>
-        <p>
-          Caerphilly monterey jack goat. Squirty cheese cheesy grin hard cheese
-          cheese strings cheese and biscuits croque monsieur smelly cheese
-          danish fontina. Swiss cheese triangles everyone loves mascarpone
-          cheese on toast who moved my cheese lancashire cheeseburger. Fromage
-          frais fromage frais cheese and biscuits stinking bishop cauliflower
-          cheese.
+          I'm Espera. I'm a software engineer and dog lover. My passion is to build simple, beautiful user experiences. I'm currently building revolutionning mobile apps at <a class="link">OPEN SI</a>.
         </p>
       </div>
     </main>
     <Footer />
-  </body>
+  </Body>
 </html>

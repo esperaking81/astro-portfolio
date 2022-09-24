@@ -8,14 +8,14 @@ body {
   -webkit-font-smoothing: antialised;
   text-rendering: optimizeLegibility;
   overflow-wrap: break-word;
-  background-color: var(--t-bg);
-  color: var(--t-fg);
 }
 
 main {
   max-width: 500px;
   margin: auto;
 }
+
+
 
 :root {
 	/* Colors */

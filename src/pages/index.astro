@@ -1,7 +1,9 @@
 ---
 // Component Imports
+import Header from '../components/Header.astro'
 import MainHead from '../components/MainHead.astro'
-import Nav from '../components/Nav.astro'
+import Body from '../layouts/Body.astro'
+import { FaDog } from 'react-icons/fa'
 
 // Data Fetching: List all Markdown posts in the repo.
 //const projects = await Astro.glob('./project/**/*.md')
@@ -15,19 +17,17 @@ import Nav from '../components/Nav.astro'
   <head>
     <MainHead
       title="Espera Awo: Personal Site"
-      description="Espera Awo: Developer, Speaker, and Writer..."
+      description="Espera Awo: App Developer"
     />
-    <style>
-
-    </style>
   </head>
-  <body class="flex flex-col min-h-screen">
-    <header><Nav /></header>
-    <main
-      class="flex-1 font-quicksand flex flex-col justify-center items-center px-8"
-    >
-      <div class="text-6xl text-center">Hi, I'm Espera Awo</div>
-      <div class="mt-8 text-xl font-bold">A Software Developer from Benin</div>
+  <Body>
+    <Header />
+    <main class="flex flex-col items-center justify-center ">
+      <div class="flex-1"></div>
+      <div class="text-6xl text-center">Hi, I'm Espera</div>
+      <p class="mt-8 text-xl font-bold">
+        Developing amazing apps at <a class="link">OPEN SI</a>.
+      </p>
     </main>
-  </body>
+  </Body>
 </html>
