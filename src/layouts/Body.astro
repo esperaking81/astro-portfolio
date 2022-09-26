@@ -1,5 +1,13 @@
+---
+export interface Props {
+  className?: string
+}
+
+const { className = '' } = Astro.props
+---
+
 <body
-  class="dark:text-gray-200 dark:bg-black min-h-screen break-words leading-6 transition-colors duration-500"
+  class={`text-gray-700 dark:text-gray-200 dark:bg-black min-h-screen break-words leading-6 transition-colors duration-500 ${className}`}
 >
-  <slot />
+  <slot></slot>
 </body>

@@ -1,7 +1,7 @@
+import '../styles/global.css'
+
 import React, { useEffect, useState } from "react";
 import { IoSunny, IoMoon } from 'react-icons/io5'
-
-const themes = ['light', 'dark']
 
 export default function ThemeToggle() {
   const [isMounted, setIsMounted] = useState(false)
@@ -41,17 +41,12 @@ export default function ThemeToggle() {
   }, [])
 
   return isMounted ? (
-    <div className="inline-flex items-center p-[1px] rounded-3xl bg-white/20">{
-      themes.map(t => {
-        const checked = t === theme
-        return (
-          <button
-            key={t}
-            className={`${checked ? 'bg-white' : ''
-              } cursor-pointer rounded-3xl p-2`}
-            onClick={toggleTheme}>
-            {t === 'light' ? <IoSunny /> : <IoMoon />}
-          </button>)
-      })
+    <div className="bg-gray-200/20 rounded-sm p-[4px] inline-flex ">{
+      <button
+        key={theme}
+        className='link'
+        onClick={toggleTheme}>
+        {theme === 'light' ? <IoSunny /> : <IoMoon />}
+      </button>
     }</div>) : (<div />)
 }

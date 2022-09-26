@@ -3,13 +3,14 @@ import type { Work } from '../models/work'
 
 import '../styles/global.css'
 
-import Nav from '../components/Nav.astro'
 import WorkList from '../components/WorkList.astro'
 import MainHead from '../components/MainHead.astro'
+import Content from '../components/Content.astro'
 import Footer from '../components/Footer.astro'
 import Body from '../layouts/Body.astro'
 
 import { WORKS } from '../config'
+import Header from '../components/Header.astro'
 
 const filterWorks = (tag: String) => {
   return WORKS.filter((el: Work) => el.tag == tag)
@@ -22,19 +23,13 @@ const filterWorks = (tag: String) => {
       title="Work | Espera Awo"
       description="Learn about Espera Awo's most recent projects"
     />
-    <style>
-      .title {
-        margin-top: 2rem;
-        margin-bottom: 2rem;
-      }
-    </style>
   </head>
   <Body>
-    <header>
-      <Nav />
-      <main>
+    <Header />
+    <main class="pt-[20px]">
+      <Content>
         <div class="flex flex-col">
-          <span class="text-3xl font-semibold font-quicksand">Work</span>
+          <span class="text-3xl font-semibold">Work</span>
           <p class="font-extralight">
             List of projects I&apos;ve worked on so far.
           </p>
@@ -47,8 +42,8 @@ const filterWorks = (tag: String) => {
           <h1 class="text-xl font-light">Old Projects</h1>
           <WorkList works={filterWorks('old')} />
         </section>
-      </main>
-      <Footer />
-    </header>
+      </Content>
+    </main>
+    <Footer />
   </Body>
 </html>

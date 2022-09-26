@@ -1,25 +1,25 @@
 ---
 import '../styles/global.css'
-import Nav from '../components/Nav.astro'
+
+// Components Imports
+import Body from '../layouts/Body.astro'
+import Header from '../components/Header.astro'
+import Content from '../components/Content.astro'
 import MainHead from '../components/MainHead.astro'
 ---
 
-<body>
+<head>
   <MainHead
     title="Work | Espera Awo"
     description="Learn about Espera Awo's most recent projects"
   />
-  <style>
-    .title {
-      margin-top: 2rem;
-      margin-bottom: 2rem;
-    }
-  </style>
-</body>
-<Nav />
-<main>
-  <div class="flex flex-col">
-    <span class="text-3xl font-semibold font-quicksand">Blog</span>
-    <span class="mt-8">Coming soon !</span>
-  </div>
-</main>
+</head>
+<Body>
+  <Header />
+  <main class="pt-[20px]">
+    <Content>
+      <h1 class="text-3xl font-semibold">Blog</h1>
+      <h1>Coming soon !</h1>
+    </Content>
+  </main>
+</Body>

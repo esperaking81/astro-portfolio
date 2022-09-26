@@ -1,9 +1,10 @@
 ---
 // Component Imports
-import Header from '../components/Header.astro'
-import MainHead from '../components/MainHead.astro'
 import Body from '../layouts/Body.astro'
-import { FaDog } from 'react-icons/fa'
+import Footer from '../components/Footer.astro'
+import Header from '../components/Header.astro'
+import Content from '../components/Content.astro'
+import MainHead from '../components/MainHead.astro'
 
 // Data Fetching: List all Markdown posts in the repo.
 //const projects = await Astro.glob('./project/**/*.md')
@@ -22,12 +23,30 @@ import { FaDog } from 'react-icons/fa'
   </head>
   <Body>
     <Header />
-    <main class="flex flex-col items-center justify-center ">
-      <div class="flex-1"></div>
-      <div class="text-6xl text-center">Hi, I'm Espera</div>
-      <p class="mt-8 text-xl font-bold">
-        Developing amazing apps at <a class="link">OPEN SI</a>.
-      </p>
+    <main class="pt-[20px]">
+      <Content className="flex-1">
+        <section>
+          <h1 class="text-4xl font-semibold">
+            An app developer with 3+ years of experience.
+          </h1>
+          <p class="mt-6">
+            Hey, I&apos;m Espera, an app developer based in Cotonou, Benin.
+            Currently building amazing mobile experiences at <a
+              class="special-link"
+              href="https:opensi.co"
+              target="_blank">OpenSI</a
+            >
+          </p>
+          <p class="mt-4 quote">
+            <q>Focus on the user and all else will follow</q>
+            <span> ~ Google</span>
+          </p>
+        </section>
+        <section class="pt-4">
+          <h1>Selected Work</h1>
+        </section>
+      </Content>
+      <Footer />
     </main>
   </Body>
 </html>

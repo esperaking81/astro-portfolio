@@ -1,39 +1,21 @@
 ---
+import '../styles/global.css'
+
 // Components Imports
-import SiteIcon from '../components/icons/siteIcon'
-import {
-  IoAtSharp,
-  IoBag,
-  IoAnalyticsOutline
-} from 'react-icons/io5'
+import { IoBriefcase, IoJournal } from 'react-icons/io5'
 ---
 
-<nav class="flex-1 font-quicksand">
-  <div class="flex font-extralight items-center justify-between">
-    <a class="link" href="/">
-      <SiteIcon />
-    </a>
+<nav class="font-extralight">
+  <div class="flex items-center justify-between">
     <div class="flex items-center">
       <div class="hidden md:flex gap-8">
-        <a class="link" href="/work/"> Work</a>
+        <a class="nav-link" href="/work/"> Work</a>
         <a class="link" href="/blog/"> Blog</a>
-        <a class="link" href="/about/"> About me</a>
       </div>
       <div class="flex gap-4 md:hidden">
-        <a class="link" href="/work/"><IoAnalyticsOutline /></a>
-        <a class="link" href="/blog/"><IoBag /></a>
-        <a class="link" href="/about/"> <IoAtSharp /></a>
+        <a class="link" href="/work/"><IoBriefcase /></a>
+        <a class="link" href="/blog/"><IoJournal /></a>
       </div>
     </div>
   </div>
 </nav>
-
-<style>
-  .link {
-    color: var(--c-gray);
-  }
-
-  .link:hover {
-    color: white;
-  }
-</style>
