@@ -1,0 +1,30 @@
+---
+import gradientRef from './public/assets/mesh-gradient.jpg'
+import { ABOUT_ME } from '../config'
+
+// Components Imports
+import HeaderLink from '../components/HeaderLink.astro'
+import { Image } from '@astrojs/image/components'
+---
+
+<section class="relative mb-6 py-8 flex justify-center items-center">
+  <div class="absolute w-full h-full overflow-hidden">
+    <Image
+      class="absolute h-auto left-1/2 top-1/2 min-w-full min-h-full object-cover -translate-x-1/2 -translate-y-1/2 opacity-30"
+      src={gradientRef}
+      alt="Gradient"
+    />
+  </div>
+  <div class="px-8 max-w-2xl mx-auto z-10 drop-shadow-lg shadow-black">
+    <h1 class="text-5xl font-semibold tracking-tighter">{ABOUT_ME}</h1>
+    <p class="mt-6">
+      Hi, I&apos;m Espera, an application developer based in Cotonou. I&apos;m
+      currently working at <HeaderLink
+        href="https:opensi.co"
+        target="_blank"
+      >
+        Open SI</HeaderLink
+      > building the next-generation of mobile and web apps.
+    </p>
+  </div>
+</section>

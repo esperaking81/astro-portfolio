@@ -5,7 +5,7 @@ module.exports = {
 	theme: {
 		extend: {
       fontFamily: {
-        mplus: ["'M PLUS Rounded 1c'", 'Verdana', 'sans-serif'],
+        script: ["'Dancing Script'", 'Verdana', 'sans-serif'],
         quicksand: ['Quicksand', 'Verdana', 'sans-serif'],
       }
     },

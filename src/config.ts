@@ -3,6 +3,7 @@ import type { Work } from "./models/work";
 export const HOMEPAGE_URL = 'https://www.esperaawo.me';
 export const SITE_TITLE = 'Espera Awo: Personal Website';
 export const SITE_DESCRIPTION = 'All about me and my work';
+export const ABOUT_ME = 'An app developer interested in delivering delightful user experiences.';
 
 export const WORKS: Array<Work> = [
   {

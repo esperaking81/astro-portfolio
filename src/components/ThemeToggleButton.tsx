@@ -1,7 +1,7 @@
 import '../styles/global.css'
 
 import React, { useEffect, useState } from "react";
-import { IoSunny, IoMoon } from 'react-icons/io5'
+import { IoSunnyOutline, IoMoonOutline } from 'react-icons/io5'
 
 export default function ThemeToggle() {
   const [isMounted, setIsMounted] = useState(false)
@@ -41,12 +41,12 @@ export default function ThemeToggle() {
   }, [])
 
   return isMounted ? (
-    <div className="bg-gray-200/20 rounded-sm p-[4px] inline-flex ">{
+    <div className="bg-gray-200/20 rounded-md p-[8px] inline-flex">{
       <button
         key={theme}
-        className='link'
+        className=''
         onClick={toggleTheme}>
-        {theme === 'light' ? <IoSunny /> : <IoMoon />}
+        {theme === 'light' ? <IoSunnyOutline /> : <IoMoonOutline />}
       </button>
     }</div>) : (<div />)
 }

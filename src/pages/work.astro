@@ -21,25 +21,25 @@ const filterWorks = (tag: String) => {
   <head>
     <MainHead
       title="Work | Espera Awo"
-      description="Learn about Espera Awo's most recent projects"
+      description="Learn about Espera's most recent projects"
     />
   </head>
   <Body>
     <Header />
     <main class="pt-[20px]">
       <Content>
-        <div class="flex flex-col">
+        <section class="flex flex-col">
           <span class="text-3xl font-semibold">Work</span>
-          <p class="font-extralight">
-            List of projects I&apos;ve worked on so far.
+          <p>
+            List of projects I&apos;ve worked on
           </p>
-        </div>
+        </section>
         <section class="mt-8">
-          <h1 class="text-xl font-light">Latest</h1>
+          <h1 class="text-xl">Latest</h1>
           <WorkList works={filterWorks('latest')} />
         </section>
         <section class="mt-4">
-          <h1 class="text-xl font-light">Old Projects</h1>
+          <h1 class="text-xl">Old Projects</h1>
           <WorkList works={filterWorks('old')} />
         </section>
       </Content>

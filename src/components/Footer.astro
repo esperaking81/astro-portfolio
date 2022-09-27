@@ -1,25 +1,10 @@
 ---
+import { HOMEPAGE_URL } from "../config";
+
 const currentYear = new Date().getFullYear();
 ---
 
-<footer>
-	&copy; {currentYear} Espera Awo
-	<small class="byline">🚀 Built by Astro</small>
+<footer class="text-zinc-500 p-4 text-center">
+  &copy; {currentYear} 
+  <a href={HOMEPAGE_URL}>Espera Awo</a>. All Rights Reserved.
 </footer>
-<style>
-	footer {
-		text-align: center;
-		padding-top: 8rem;
-		padding-right: 2rem;
-		padding-bottom: 4rem;
-		padding-left: 2rem;
-	}
-
-	.byline {
-		display: block;
-		margin-top: 1rem;
-		color: var(--t-subdue);
-		font-size: var(--f-d2);
-		text-transform: uppercase;
-	}
-</style>

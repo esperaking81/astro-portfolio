@@ -1,0 +1,17 @@
+---
+export interface Props {
+  label: string
+  href: string
+  className?: string
+}
+
+// Components imports
+import { IoArrowForward } from "react-icons/io5";
+import HeaderLink from "./HeaderLink.astro";
+
+const { href, label, className = '' } = Astro.props
+---
+
+<HeaderLink class={`inline-flex items-center gap-2 ${className}`} href={href}>
+  {label} <IoArrowForward />
+</HeaderLink>

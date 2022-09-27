@@ -5,10 +5,13 @@ import Footer from '../components/Footer.astro'
 import Header from '../components/Header.astro'
 import Content from '../components/Content.astro'
 import MainHead from '../components/MainHead.astro'
+import Masthead from '../components/Masthead.astro'
+import ReadMore from '../components/ReadMore.astro'
 
 // Data Fetching: List all Markdown posts in the repo.
-//const projects = await Astro.glob('./project/**/*.md')
-//const featuredProject = projects[0]
+const projects = await Astro.glob('./project/**/*.md')
+const featuredProject = projects[0]
+console.log(featuredProject)
 
 // Full Astro Component Syntax:
 // https://docs.astro.build/core-concepts/astro-components/
@@ -17,33 +20,45 @@ import MainHead from '../components/MainHead.astro'
 <html lang="en">
   <head>
     <MainHead
-      title="Espera Awo: Personal Site"
-      description="Espera Awo: App Developer"
+      title="Espera Awo - Personal Site"
+      description="My personal webiste"
     />
   </head>
   <Body>
     <Header />
-    <main class="pt-[20px]">
-      <Content className="flex-1">
+    <main class="pt-[0px]">
+      <Masthead />
+      <Content>
         <section>
-          <h1 class="text-4xl font-semibold">
-            An app developer with 3+ years of experience.
-          </h1>
-          <p class="mt-6">
-            Hey, I&apos;m Espera, an app developer based in Cotonou, Benin.
-            Currently building amazing mobile experiences at <a
-              class="special-link"
-              href="https:opensi.co"
-              target="_blank">OpenSI</a
+          <div class="inline-flex items-center w-full">
+            <div class="text-2xl">Featured work</div>
+            <div class="flex-1"></div>
+            <ReadMore href="/work/" label="View more" />
+          </div>
+          <a href={featuredProject.url}>
+            <div
+              class="flex flex-col md:flex-row items-center justify-center gap-4 mt-6"
             >
-          </p>
-          <p class="mt-4 quote">
-            <q>Focus on the user and all else will follow</q>
-            <span> ~ Google</span>
-          </p>
-        </section>
-        <section class="pt-4">
-          <h1>Selected Work</h1>
+              <img
+                class="border border-slate-300 dark:border-zinc-700 rounded-xl object-cover"
+                src={featuredProject.frontmatter.img}
+                alt={featuredProject.frontmatter.title}
+              />
+              <div class="flex flex-col items-start">
+                <div class="font-semibold">
+                  {featuredProject.frontmatter.title}
+                </div>
+                <div class="tracking-tight mt-4">
+                  {featuredProject.frontmatter.description}
+                </div>
+                <ReadMore
+                  href={featuredProject.url ?? '/work/'}
+                  label="Read more"
+                  className="mt-6"
+                />
+              </div>
+            </div>
+          </a>
         </section>
       </Content>
       <Footer />
