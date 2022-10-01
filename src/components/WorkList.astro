@@ -1,0 +1,15 @@
+---
+import Work from '../components/Work.astro'
+
+const { works } = Astro.props
+---
+
+<ul class="grid grid-cols-2">
+  {
+    works.map((work: any) => (
+      <li>
+        <Work title={work.title} description={work.description} icon={work.icon} />
+      </li>
+    ))
+  }
+</ul>

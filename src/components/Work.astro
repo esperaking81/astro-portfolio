@@ -1,0 +1,14 @@
+---
+import '../styles/global.css'
+
+const { title, description } = Astro.props
+---
+
+<div class="p-4 flex group hover:bg-gray-200/20">
+  <div class="ml-2">
+    <div class="">{title}</div>
+    <p class="mt-2 text-sm text-current/20">
+      {description}
+    </p>
+  </div>
+</div>

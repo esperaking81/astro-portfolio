@@ -1,0 +1,33 @@
+---
+// Props
+export interface Props {
+  project: any
+}
+
+// Components imports
+import ReadMore from './ReadMore.astro'
+import { Image } from '@astrojs/image/components'
+
+// Data Fetching: use props data
+const { frontmatter, url } = Astro.props.project
+---
+
+<figure class="flex flex-col md:flex-row gap-4 mt-6">
+  <Image
+    class="w-full h-56 md:w-80 md:h-44 border border-slate-300 dark:border-zinc-700 rounded-md object-cover"
+    src={frontmatter.img}
+    alt={frontmatter.title}
+    width={500}
+    height={290}
+    fit="cover"
+  />
+  <figcaption class="flex flex-col items-start flex-1">
+    <div class="font-medium">
+      {frontmatter.title}
+    </div>
+    <div class="mt-4 leading-relaxed">
+      {frontmatter.description}
+    </div>
+    <ReadMore href={url ?? '/project/'} label="Read more" className="mt-6" />
+  </figcaption>
+</figure>

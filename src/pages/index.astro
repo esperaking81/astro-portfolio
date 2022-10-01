@@ -1,0 +1,47 @@
+---
+// Component Imports
+import Body from '../layouts/Body.astro'
+import Footer from '../components/Footer.astro'
+import Header from '../components/Header.astro'
+import Content from '../components/Content.astro'
+import MainHead from '../components/MainHead.astro'
+import Masthead from '../components/Masthead.astro'
+import ReadMore from '../components/ReadMore.astro'
+import PortfolioPreview from '../components/PortfolioPreview.astro'
+
+// Data Fetching: List all Markdown posts in the repo.
+const projects = await Astro.glob('./project/**/*.md')
+const featuredProject = projects[0]
+console.log(featuredProject)
+
+// Full Astro Component Syntax:
+// https://docs.astro.build/core-concepts/astro-components/
+---
+
+<html lang="en">
+  <head>
+    <MainHead
+      title="Espera Awo - Personal Site"
+      description="My personal webiste"
+    />
+  </head>
+  <Body>
+    <Header />
+    <main class="pt-[0px]">
+      <Masthead />
+      <Content>
+        <section>
+          <div class="inline-flex items-center w-full">
+            <div class="text-2xl">Featured work</div>
+            <div class="flex-1"></div>
+            <ReadMore href="/projects/" label="View more" />
+          </div>
+          <a href={featuredProject.url}>
+            <PortfolioPreview project={featuredProject} />
+          </a>
+        </section>
+      </Content>
+      <Footer />
+    </main>
+  </Body>
+</html>
